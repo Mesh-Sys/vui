@@ -39,7 +39,7 @@ def load_and_warm_model(model_name):
     model = Vui.from_pretrained_inf(model_path).cuda()
 
     print(f"Compiling model {model_name}...")
-    model.decoder = torch.compile(model.decoder, fullgraph=True)
+    #model.decoder = torch.compile(model.decoder, fullgraph=True)
 
     print(f"Warming up model {model_name}...")
     warmup_text = "Hello, this is a test. Let's say some random shizz"
