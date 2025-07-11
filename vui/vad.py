@@ -89,7 +89,7 @@ def load_vad_model(
             "Model has been downloaded but the SHA256 checksum does not not match. Please retry loading the model."
         )
 
-    vad_model = Model.from_pretrained(model_fp, use_auth_token=use_auth_token)
+    vad_model = Model.from_pretrained(model_fp, use_auth_token=os.getenv("HF_TOKEN"))
     hyperparameters = {
         "onset": vad_onset,
         "offset": vad_offset,
@@ -254,7 +254,7 @@ class VoiceActivitySegmentation(VoiceActivityDetection):
         super().__init__(
             segmentation=segmentation,
             fscore=fscore,
-            use_auth_token=use_auth_token,
+            use_auth_token=os.getenv("HF_TOKEN"),
             **inference_kwargs,
         )
 
