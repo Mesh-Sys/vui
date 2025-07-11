@@ -29,7 +29,7 @@ def detect_voice_activity(waveform, pipe=None):
     if pipe is not None:
         pipeline = pipe
     elif pipeline is None:
-        pipeline = Pipeline.from_pretrained(pipeline_name)
+        pipeline = Pipeline.from_pretrained(pipeline_name, use_auth_token=os.getenv("HF_TOKEN"))
         initial_params = {
             "onset": 0.8,
             "offset": 0.5,
