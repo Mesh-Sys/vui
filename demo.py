@@ -455,4 +455,4 @@ document.addEventListener('DOMContentLoaded', function() {
     )
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0")
+    demo.launch(share=True, server_name="0.0.0.0")
