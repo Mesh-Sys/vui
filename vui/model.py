@@ -11,9 +11,9 @@ from transformers import AutoTokenizer
 from vui.fluac import Fluac
 from vui.utils import load_what_you_can
 
-from .config import Config
-from .patterns import DelayedPatternProvider
-from .rope import apply_rotary_emb, precompute_freqs_cis
+from vui.config import Config
+from vui.patterns import DelayedPatternProvider
+from vui.rope import apply_rotary_emb, precompute_freqs_cis
 
 
 class KVCache(nn.Module):
