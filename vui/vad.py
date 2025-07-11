@@ -251,11 +251,10 @@ class VoiceActivitySegmentation(VoiceActivityDetection):
         use_auth_token: str | None = None,
         **inference_kwargs,
     ):
-        print(f"HF_TOKEN: {os.getenv('HF_TOKEN')}")
         super().__init__(
             segmentation=segmentation,
             fscore=fscore,
-            use_auth_token=os.getenv("HF_TOKEN"),
+            use_auth_token=use_auth_token,
             **inference_kwargs,
         )
 
