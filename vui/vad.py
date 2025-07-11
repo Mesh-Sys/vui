@@ -97,7 +97,7 @@ def load_vad_model(
         "min_duration_off": 0.1,
     }
     vad_pipeline = VoiceActivitySegmentation(
-        segmentation=vad_model, device=torch.device(device), batch_size=batch_size
+        segmentation=vad_model, device=torch.device(device), batch_size=batch_size, use_auth_token=os.getenv('HF_TOKEN')
     )
     vad_pipeline.instantiate(hyperparameters)
 
