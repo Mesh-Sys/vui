@@ -131,6 +131,8 @@ class MHA(nn.Module):
 
         is_causal = self.causal and self.kv_cache is None
 
+        # TorchRuntimeError Fix
+        q = q.to(torch.bfloat16)
         out = F.scaled_dot_product_attention(
             q,
             k,
